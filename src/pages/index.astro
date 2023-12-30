@@ -2,14 +2,16 @@
 import Layout           from "../layouts/Layout.astro";
 import Button           from "../components/Button.astro";
 import Section          from "../components/Section.astro";
+import Title            from "../components/Title.astro";
 import ExperienceItem   from "../components/ExperienceItem.astro";
+import ProyectItem      from "../components/ProyectItem.astro";
 
 const experience        = [
     {
         title           : "DESARROLLADOR FULL STACK | 2023 MARZO - PRESENTE",
         description     : "Desarrollando aplicación de nota venta, y creando API de factura electrónica integrada con SII (Servicio puesto interno).",
         company         : "ACHL SPA",
-        tags            : ["PYTHON", "NODE.JS", "REACT", "REACT-NATIVE", "PHP", "LARAVEL"]
+        tags            : ["PYTHON", "NODE.JS", "REACT", "REACT-NATIVE", "PHP", "LARAVEL", "TAILWINDSCSS"]
     },
     {
         title           : "DESARROLLADOR FULL STACK | 2022 MAYO - 2023 MARZO",
@@ -22,6 +24,18 @@ const experience        = [
         description     : "Trabaje en el sector de factura electrónica, donde implemente integraciones con boleta y modulo en factura electrónica.",
         company         : "CONTALINE S.A",
         tags            : ["ASP", "BOOTSTRAP", "C#", "SCRAPING SELENIUM", "VISUAL BASIC", ".NET"]
+    }
+];
+
+const proyect           = [
+    {
+        title           : "POKEAPI",
+        // description     : "Simple website styled using TailwindCSS and React. Uses an external API called PokeAPI to display all Pokemons and search Pokemons and get their stats and types.",
+        description     : "Sitio web sencillo diseñado con TailwindCSS y React. Utiliza una API externa llamada PokeAPI para mostrar todos los Pokémon, buscar Pokémon y obtener sus estadísticas y tipos.",
+        github          : "https://github.com/niba291/POKEAPI",
+        live            : "https://niba291.github.io/POKEAPI/",
+        img             : "https://github.com/niba291/POKEAPI/assets/63934510/2a789344-66a1-45af-bfa6-85e3e48eb764",
+        tags            : ["REACT", "TAILWINDSCSS"]
     }
 ];
 ---
@@ -85,11 +99,21 @@ const experience        = [
         </div>
     </Section>
     <Section class="md:px-20 py-10">
-        <h2 class="text-3xl font-bold w-full text-center md:text-start">Experiencia</h2>  
-        <ul class="w-full flex flex-wrap py-2 pt-10 md:pl-12">
+        <Title>Experiencia</Title>
+        <ul class="w-full flex flex-wrap pt-10 md:pl-12">
             {experience.map(({title, description, company, tags}, key) => {
                 return (<ExperienceItem title={title} description={description} company={company} tags={tags} last={(experience.length - 1) === key}></ExperienceItem>);
             })}
         </ul>
+    </Section>
+    <Section class="md:px-20">
+        <Title>Proyectos</Title>
+        <section class="w-full py-10">
+            {proyect.map(({title, description, github, live, img, tags}, key) => {
+                return(
+                    <ProyectItem title={title} description={description} github={github} live={live} img={img} tags={tags}></ProyectItem>
+                );
+            })}
+        </section>
     </Section>
 </Layout>
