@@ -1,0 +1,29 @@
+---
+interface Props {
+	title       : string;
+    description : string;
+    company     : string;
+    tags        : Array<string>;
+    last        : Boolean;
+}
+
+const { title, description, company, tags, last } = Astro.props;
+---
+
+<li class="flex gap-2">
+    <div class={!last ? "flex border-l-4 border-black-base" : "flex border-black-base"}>
+        <span class={!last ? "w-[40px] h-[40px] rounded-full bg-black-base -ml-[1.4rem]" : "w-[40px] h-[40px] rounded-full bg-black-base -ml-[1.2rem]"}></span>
+    </div>
+    <div class="flex flex-wrap pl-5 pb-10">
+        <h5 class="font-semibold w-full text-xl">
+            {title}
+        </h5>
+        <h6 class="w-full pb-2 text-xl font-normal text-gray-base">{company}</h6>
+        <p class="text-md w-full pb-8">
+            {description}
+        </p>
+        {tags.map((item, key) => {
+            return (<span class="border border-black-base mr-1 rounded-full px-3 mb-2 md:mb-0">{item}</span>)
+        })}
+    </div>
+</li>
