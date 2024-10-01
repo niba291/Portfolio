@@ -5,7 +5,7 @@ export default {
 		extend					: {
 			colors				: {
 				"black-base" 	: "#222222",
-				"gray-base" 	: "#C8C7C7"
+				"gray-base" 	: "#B6B6B6"
 			}
 		},
 	},
