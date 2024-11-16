@@ -4,7 +4,7 @@ interface Props {
     download?: string
 }
 
-const { href, download = "" } = Astro.props;
+const { href, download = "" } : Props = Astro.props;
 ---
 
 {download !== "" ? 
