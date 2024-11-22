@@ -1,3 +1,5 @@
+import imageLandingPage     from "../images/landingPage.webp";
+
 export const experience        = [
     {
         title           : "DESARROLLADOR FULL STACK | 2024 JULIO - 2024 NOVIEMBRE",
@@ -59,6 +61,14 @@ export const experience        = [
 
 export const proyect           = [
     {
+        title           : "DIGITALDEVSOLUTIONS",
+        description     : "Landing page creada con Astro y Tailwind CSS, enfocada en promover servicios de programación web. Diseño rápido y responsivo. Optimizada para una experiencia fluida y conversión de clientes.",
+        github          : "https://github.com/DigitalDevSolutions/LAN-WEB",
+        live            : "https://digitaldevsolutions.cl/",
+        img             : imageLandingPage,
+        tags            : ["ASTRO", "TAILWINDSCSS"]
+    },
+    {
         title           : "PDF-EDITOR",
         description     : "Sitio web para crear pdf basico en tiempo real donde podrás descargar el archivo pdf, creado con React, React-pdf y TailwindCSS",
         github          : "https://github.com/niba291/PDF-EDITOR",
@@ -75,7 +85,7 @@ export const proyect           = [
         tags            : ["REACT", "TAILWINDSCSS"]
     },
     {
-        title           : "To-do",
+        title           : "TO-DO",
         description     : "Sitio web para realizar to-do list",
         github          : "https://github.com/niba291/To-do",
         live            : "https://niba291.github.io/To-do/",
